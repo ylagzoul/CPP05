@@ -5,7 +5,6 @@ SRC = main.cpp Bureaucrat.cpp
 OBJ = $(SRC:%.cpp=%.o)
 HADER = Bureaucrat.hpp
 
-
 all:$(NAME)
 
 $(NAME): $(OBJ)
