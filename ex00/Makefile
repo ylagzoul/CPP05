@@ -1,6 +1,6 @@
 NAME = Bureaucrat
 CC = c++
-FLAG = -Wextra -wall -Werror -std=c++98
+FLAG = -Wextra -Wall -Werror -std=c++98
 SRC = main.cpp Bureaucrat.cpp
 OBJ = $(SRC:%.cpp=%.o)
 HADER = Bureaucrat.hpp
