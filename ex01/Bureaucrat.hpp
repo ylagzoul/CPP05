@@ -3,22 +3,9 @@
 
 #include <iostream>
 #include <exception>
+#include <string>
 
-class GradeTooHighException : public std::exception {
-    public:
-        const char * what() const throw() {
-            return ("grade too highest");
-        }
-
-};
-
-class GradeTooLowException : public std::exception {
-    public:
-        const char* what() const throw() {
-            return ("greade too lowest");
-        }
-};
-
+class Form;
 
 class Bureaucrat {
     private:
@@ -32,27 +19,24 @@ class Bureaucrat {
         int getGrade() const;
         void increment();
         void decrement();
+        void signForm(Form& form);
         ~Bureaucrat();
 
         class GradeTooHighException : public std::exception {
             public:
                 const char * what() const throw() {
-                    return ("grade too highest");
+                    return ("Bureaucrat: grade too high! (minimum is 1)");
                 }
-
         };
 
         class GradeTooLowException : public std::exception {
             public:
                 const char* what() const throw() {
-                    return ("greade too lowest");
+                    return ("Bureaucrat: grade too low! (maximum is 150)");
                 }
         };
 };
 
-std::ostream& operator<<(std::ostream& out,const Bureaucrat& Bureaucrat);
-
-
-
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
 
 #endif
