@@ -1,7 +1,6 @@
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(const std::string name, const int gradeToSign, const int gradeToExecute)
+AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExecute)
     : _name(name),
       _signed(false),
       _gradeToSign(gradeToSign),
@@ -13,47 +12,47 @@ Form::Form(const std::string name, const int gradeToSign, const int gradeToExecu
         throw GradeTooLowException();
 }
 
-Form::Form(const Form& other)
+AForm::AForm(const AForm& other)
     : _name(other._name),
       _signed(other._signed),
       _gradeToSign(other._gradeToSign),
       _gradeToExecute(other._gradeToExecute)
 {}
 
-Form& Form::operator=(const Form& other)
+AForm& AForm::operator=(const AForm& other)
 {
     if (this != &other)
         _signed = other._signed;
     return (*this);
 }
 
-Form::~Form() {}
+AForm::~AForm() {}
 
-const std::string Form::getName() const {
+const std::string AForm::getName()           const {
     return (_name);
 }
-bool              Form::isSigned() const {
+bool              AForm::isSigned()          const {
     return (_signed);
 }
-int               Form::getGradeToSign() const {
+int               AForm::getGradeToSign()    const {
     return (_gradeToSign);
 }
-int               Form::getGradeToExecute() const {
+int               AForm::getGradeToExecute() const {
     return (_gradeToExecute);
 }
 
-void Form::beSigned(const Bureaucrat& b)
+void AForm::beSigned(const Bureaucrat& b)
 {
     if (b.getGrade() > _gradeToSign)
         throw GradeTooLowException();
     _signed = true;
 }
 
-std::ostream& operator<<(std::ostream& os, const Form& form)
+std::ostream& operator<<(std::ostream& os, const AForm& Aform)
 {
-    os << "Form name        : " << form.getName()
-       << "\nSigned           : " << (form.isSigned() ? "Yes" : "No")
-       << "\nGrade to Sign    : " << form.getGradeToSign()
-       << "\nGrade to Execute : " << form.getGradeToExecute();
+    os << "AForm name        : " << Aform.getName()
+       << "\nSigned           : " << (Aform.isSigned() ? "Yes" : "No")
+       << "\nGrade to Sign    : " << Aform.getGradeToSign()
+       << "\nGrade to Execute : " << Aform.getGradeToExecute();
     return (os);
 }
