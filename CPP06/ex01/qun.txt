@@ -1,0 +1,5 @@
+
+
++ what is uintptr_t ?
++ what is reinterpret_cast?
++ what is struct?
