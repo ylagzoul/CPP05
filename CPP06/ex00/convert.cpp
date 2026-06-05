@@ -29,8 +29,7 @@ int ScalarConverter::checkParameter(int ac, std::string par)
 
     if (ac != 2)
         return (1);
-    else if (par == "nan" || par == "nanf" || par == "-inf"
-            || par == "-inff" || par == "+inf" || par == "+inff")
+    else if (par == "nan" || par == "nanf" || par == "-inf" || par == "-inff" || par == "+inf" || par == "+inff")
     {
         Type_v = "pseudo-literals";
     }
@@ -38,13 +37,13 @@ int ScalarConverter::checkParameter(int ac, std::string par)
         Type_v = "char";
     else
     {
-        for(size_t i = 0; i < par.size()-1; i++)
+        for (size_t i = 0; i < par.size() - 1; i++)
         {
-            if(!isdigit(par[i]))
+            if (!isdigit(par[i]))
             {
                 if (par[i] == '.' && comma == 0)
                     comma++;
-                else if (par[i] == 'f' &&  par[i] == '\0')
+                else if (par[i] == 'f' && par[i] == '\0')
                     Type_v = "float";
                 else
                     return (1);
@@ -79,11 +78,10 @@ void Convert_pseudoLiterals(std::string par)
     }
 }
 
-
-int main(int ac, char*av[])
+int main(int ac, char *av[])
 {
     ScalarConverter convert;
-    if (convert.checkParameter(ac,av[1]))
+    if (convert.checkParameter(ac, av[1]))
     {
         std::cout << "not valid input";
         return (1);
@@ -92,5 +90,4 @@ int main(int ac, char*av[])
     {
         Convert_pseudoLiterals(av[1]);
     }
-
 }

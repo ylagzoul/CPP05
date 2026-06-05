@@ -2,6 +2,7 @@
 #define  CONVERT_HHP
 
 #include <iostream>
+#include <cstdlib>
 
 class  ScalarConverter
 {
