@@ -9,7 +9,6 @@ class GradeTooHighException : public std::exception {
         const char * what() const throw() {
             return ("grade too highest");
         }
-
 };
 
 class GradeTooLowException : public std::exception {
@@ -33,26 +32,8 @@ class Bureaucrat {
         void increment();
         void decrement();
         ~Bureaucrat();
-
-        class GradeTooHighException : public std::exception {
-            public:
-                const char * what() const throw() {
-                    return ("grade too highest");
-                }
-
-        };
-
-        class GradeTooLowException : public std::exception {
-            public:
-                const char* what() const throw() {
-                    return ("greade too lowest");
-                }
-        };
 };
 
 std::ostream& operator<<(std::ostream& out,const Bureaucrat& Bureaucrat);
-
-
-
 
 #endif

@@ -5,9 +5,13 @@
 
 class ShrubberyCreationForm : public AForm
 {
-private:
-public:
-    void beSigned(const Bureaucrat &b);
+    private:
+        int _shrubbery;
+    public:
+        ShrubberyCreationForm();
+        void beSigned(const Bureaucrat &b);
+        void beExcec(const Bureaucrat& b);
 };
+
 
 #endif

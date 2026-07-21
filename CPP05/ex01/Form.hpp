@@ -7,6 +7,20 @@
 
 class Bureaucrat;
 
+class GradeTooHighException : public std::exception {
+    public:
+        const char* what() const throw() {
+            return ("Form: grade too high! (minimum is 1)");
+        }
+};
+
+class GradeTooLowException : public std::exception {
+    public:
+        const char* what() const throw() {
+            return ("Form: grade too low! (maximum is 150)");
+        }
+};
+
 class Form {
     private:
         const std::string   _name;
@@ -26,19 +40,6 @@ class Form {
 
         void beSigned(const Bureaucrat& b);
 
-        class GradeTooHighException : public std::exception {
-            public:
-                const char* what() const throw() {
-                    return ("Form: grade too high! (minimum is 1)");
-                }
-        };
-
-        class GradeTooLowException : public std::exception {
-            public:
-                const char* what() const throw() {
-                    return ("Form: grade too low! (maximum is 150)");
-                }
-        };
 };
 
 std::ostream& operator<<(std::ostream& os, const Form& form);

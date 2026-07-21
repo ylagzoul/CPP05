@@ -32,13 +32,14 @@ Form::~Form() {}
 const std::string Form::getName() const {
     return (_name);
 }
-bool              Form::isSigned() const {
+bool Form::isSigned() const {
     return (_signed);
-}
-int               Form::getGradeToSign() const {
+}        
+
+int Form::getGradeToSign() const {
     return (_gradeToSign);
 }
-int               Form::getGradeToExecute() const {
+int Form::getGradeToExecute() const {
     return (_gradeToExecute);
 }
 
