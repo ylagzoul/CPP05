@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade)
 {
@@ -9,7 +10,8 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(gr
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade)
-{}
+{
+}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {
@@ -18,10 +20,19 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
     return (*this);
 }
 
-Bureaucrat::~Bureaucrat() {}
+Bureaucrat::~Bureaucrat()
+{
+}
 
-const std::string Bureaucrat::getName() const { return (name); }
-int               Bureaucrat::getGrade() const { return (grade); }
+const std::string Bureaucrat::getName() const
+{
+    return (name);
+}
+
+int Bureaucrat::getGrade() const
+{
+    return (grade);
+}
 
 void Bureaucrat::increment()
 {
@@ -37,22 +48,35 @@ void Bureaucrat::decrement()
     grade++;
 }
 
-void Bureaucrat::signForm(AForm& Aform)
+void Bureaucrat::signForm(AForm& form)
 {
     try
     {
-        Aform.beSigned(*this);
-        std::cout << name << " signed " << Aform.getName() << std::endl;
+        form.beSigned(*this);
+        std::cout << name << " signed " << form.getName() << std::endl;
     }
     catch (const std::exception& e)
     {
-        std::cout << name << " couldn't sign " << Aform.getName()
-                  << " because " << e.what() << std::endl;
+        std::cout << name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(const AForm& form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << name << " executed " << form.getName() << std::endl;
+    }
+    catch (const std::exception& e)
+    {
+        std::cout << name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b)
 {
     os << b.getName() << ", bureaucrat grade " << b.getGrade();
+
     return (os);
 }

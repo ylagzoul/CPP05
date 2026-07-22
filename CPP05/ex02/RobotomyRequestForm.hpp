@@ -1,14 +1,24 @@
-#define ROBOTOMYREQUESTFORM_HPP
 #ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
-class RobotomyRequestForm 
+#include "AForm.hpp"
+
+class RobotomyRequestForm : public AForm
 {
-    private:
-        robotomized;
-    public:
-        RobotomyRequestForm();
-        void beSigned(const Bureaucrat &b);
-        void beExcec(const Bureaucrat& b);
+private:
+    std::string _target;
+
+public:
+    RobotomyRequestForm(const std::string& target);
+    RobotomyRequestForm(const RobotomyRequestForm& other);
+
+    RobotomyRequestForm& operator=(
+        const RobotomyRequestForm& other
+    );
+
+    ~RobotomyRequestForm();
+
+    void executeAction() const;
 };
 
 #endif

@@ -4,41 +4,47 @@
 #include <iostream>
 #include <exception>
 #include <string>
-#include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
 
 class AForm;
 
-class Bureaucrat {
-    private:
-        const std::string name;
-        int grade;
+class Bureaucrat
+{
+private:
+    const std::string name;
+    int grade;
+
+public:
+    Bureaucrat(const std::string name, int grade);
+    Bureaucrat(const Bureaucrat& other);
+    Bureaucrat& operator=(const Bureaucrat& other);
+    ~Bureaucrat();
+
+    const std::string getName() const;
+    int getGrade() const;
+
+    void increment();
+    void decrement();
+
+    void signForm(AForm& form);
+    void executeForm(const AForm& form) const;
+
+    class GradeTooHighException : public std::exception
+    {
     public:
-        Bureaucrat(const std::string name, int grade);
-        Bureaucrat(const Bureaucrat& other);
-        Bureaucrat& operator=(const Bureaucrat& other);
-        const std::string getName() const;
-        int getGrade() const;
-        void increment();
-        void decrement();
-        void signForm(AForm& Aform);
-        ~Bureaucrat();
+        const char* what() const throw()
+        {
+            return ("Bureaucrat: grade too high! (minimum is 1)");
+        }
+    };
 
-        class GradeTooHighException : public std::exception {
-            public:
-                const char * what() const throw() {
-                    return ("Bureaucrat: grade too high! (minimum is 1)");
-                }
-        };
-
-        class GradeTooLowException : public std::exception {
-            public:
-                const char* what() const throw() {
-                    return ("Bureaucrat: grade too low! (maximum is 150)");
-                }
-        };
+    class GradeTooLowException : public std::exception
+    {
+    public:
+        const char* what() const throw()
+        {
+            return ("Bureaucrat: grade too low! (maximum is 150)");
+        }
+    };
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
