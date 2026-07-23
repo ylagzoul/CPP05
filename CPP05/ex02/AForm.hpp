@@ -16,11 +16,7 @@ private:
     const int         _gradeToExecute;
 
 public:
-    AForm(
-        const std::string name,
-        const int gradeToSign,
-        const int gradeToExecute
-    );
+    AForm(const std::string name, const int gradeToSign, const int gradeToExecute);
 
     AForm(const AForm& other);
 

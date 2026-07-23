@@ -1,0 +1,6 @@
+
+
+        + what is rand()?
+        + learn std::ostream& operator<<(std::ostream& os, const AForm& form);?
+        + what operator?
+        +

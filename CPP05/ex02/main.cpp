@@ -24,11 +24,8 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << "{3}" << "Exception: "
-                  << e.what()
-                  << std::endl;
+        std::cout << "{3}" << "Exception: " << e.what() << std::endl;
     }
-
 
     std::cout << "\n========== TEST 2 ==========" << std::endl;
     std::cout << "Robotomy Request" << std::endl;
@@ -43,9 +40,7 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << "Exception: "
-                  << e.what()
-                  << std::endl;
+        std::cout << "Exception: " << e.what() << std::endl;
     }
 
 
@@ -62,9 +57,7 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << "Exception: "
-                  << e.what()
-                  << std::endl;
+        std::cout << "Exception: " << e.what() << std::endl;
     }
 
 
@@ -80,9 +73,7 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << "Exception: "
-                  << e.what()
-                  << std::endl;
+        std::cout << "Exception: " << e.what() << std::endl;
     }
 
 
@@ -98,11 +89,8 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << "Exception: "
-                  << e.what()
-                  << std::endl;
+        std::cout << "Exception: " << e.what() << std::endl;
     }
-
 
     std::cout << "\n========== TEST 6 ==========" << std::endl;
     std::cout << "Can sign but cannot execute" << std::endl;
@@ -132,8 +120,7 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what()
-                  << std::endl;
+        std::cout << e.what() << std::endl;
     }
 
     try
@@ -142,8 +129,7 @@ int main()
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what()
-                  << std::endl;
+        std::cout << e.what() << std::endl;
     }
 
     return (0);
