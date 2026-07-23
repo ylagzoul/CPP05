@@ -79,9 +79,6 @@ int main()
         std::cout << "Invalid form: correctly returned NULL" << std::endl;
     }
 
-    // ==========================================
-    // END
-    // ==========================================
 
     return 0;
 }

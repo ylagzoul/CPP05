@@ -6,7 +6,6 @@
 #include "PresidentialPardonForm.hpp"
 
 
-
 AForm *Intern::Shrubbery(std::string target)
 {
     return(new ShrubberyCreationForm(target));
@@ -19,7 +18,6 @@ AForm *Intern::Robotomy(std::string target)
 
 AForm *Intern::Presidential(std::string target)
 {
-    ;
     return (new PresidentialPardonForm(target));
 }
 

@@ -4,3 +4,28 @@
         + learn std::ostream& operator<<(std::ostream& os, const AForm& form);?
         + what operator?
         +
+
+        //// 00 ////
+                Namespaces, classes, member functions, stdio streams,
+                initialization lists, static, const, and some other basic
+                stuf
+
+        //// 01 ////
+                Memory allocation, pointers to members, 
+                references and switch statements
+
+        //// 02 ///
+                Ad-hoc polymorphism, operator overloading
+                and the Orthodox Canonical class form
+
+        //// 03 ///
+                Inheritance
+
+        //// 04 ///
+
+                Subtype Polymorphism, Abstract Classes, and
+                        Interfaces
+
+        //// 05 ///
+
+                Repetition and Exceptions
