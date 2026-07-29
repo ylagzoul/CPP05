@@ -2,8 +2,9 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <exception>
+#include <exception> // 
 
+//
 class GradeTooHighException : public std::exception {
     public:
         const char * what() const throw() {
@@ -35,5 +36,7 @@ class Bureaucrat {
 };
 
 std::ostream& operator<<(std::ostream& out,const Bureaucrat& Bureaucrat);
+
+
 
 #endif

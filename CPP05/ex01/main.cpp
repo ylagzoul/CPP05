@@ -26,8 +26,6 @@ int main()
     }
     catch (std::exception& e) { std::cout << "Exception: " << e.what() << std::endl; }
 
-    // ===== Test 3: Form grade out of bounds =====
-    std::cout << "\n=== Test 3: Form grade 0 (too high) ===" << std::endl;
     try {
         Form badForm("Bad Form", 0, 25);
     }

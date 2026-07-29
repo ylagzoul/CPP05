@@ -8,6 +8,7 @@ int main() {
         Bureaucrat eve("Eve", -1);
         // std::cout << eve << std::endl;
         eve.decrement();
+        
         // std::cout << "After decrement: " << eve << std::endl;
         eve.increment(); // Should throw exception
         // std::cout << "After second decrement: " << eve << std::endl;
