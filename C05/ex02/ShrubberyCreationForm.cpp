@@ -8,7 +8,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string name) : AForm(145, 137,
 
 
 
-execute(Bureaucrat const & executor)
 
 
-executeForm(AForm const & form)
+
+// executeForm(AForm const & form)

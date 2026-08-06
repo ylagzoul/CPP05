@@ -18,6 +18,7 @@ int main()
             Bureaucrat bob("youssef", 130);
             AForm Aform(100,59,"aya");
             bob.signForm(Aform);
+            bob.executeForm(Aform);
         }
         catch(std::exception& e) {
             std::cout << e.what();

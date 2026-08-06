@@ -8,6 +8,7 @@ class ShrubberyCreationForm : public AForm
         std::string name;
     public:
         ShrubberyCreationForm(std::string name);
+        
         ~ShrubberyCreationForm();
 };
 

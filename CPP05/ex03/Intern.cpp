@@ -21,6 +21,8 @@ AForm *Intern::Presidential(std::string target)
     return (new PresidentialPardonForm(target));
 }
 
+
+
 AForm *Intern::makeForm(std::string nameToForm, std::string targetToForm)
 {
     int i = 0;

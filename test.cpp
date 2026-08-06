@@ -1,19 +1,21 @@
 #include <iostream>
+#include <sstream>
 
-void test()
-{
-    throw 10;
-}
 
-int main()
+int main(int ac, char *av[])
 {
-    try
-    {
-        test();
-    }
-    catch(int x)
-    {
-        std::cerr << x << '\n';
-    }
-    
+    (void)ac;
+    std::stringstream str;
+    str << av[1];
+
+    float num;
+
+    str >> num;
+
+    if (str.fail())
+        std::cout << "good test\n";
+    else
+        std::cout << "invaled test\n";
+
+    std::cout << "num == " << num << std::endl;
 }

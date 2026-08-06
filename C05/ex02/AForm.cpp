@@ -48,6 +48,13 @@ void AForm::beSigned(Bureaucrat &be)
     _signed = true;
 }
 
+void AForm::execute(const Bureaucrat& executor)
+{
+    // if (__signed)
+    ;
+
+}
+
 std::ostream& operator<<(std::ostream& os, AForm& Aform)
 {
     os << Aform.getName() << ", Grade To Sign " << Aform.getGradeToSign()  << ", Grade To Execute "<< Aform.getGradeToExecute() << ", Signed " << Aform.getSigned();

@@ -29,3 +29,9 @@
         //// 05 ///
 
                 Repetition and Exceptions
+
+
+        + class GradeTooHighException : public std::exception 
+                + why Inheritance in std::exception?
+
+        +

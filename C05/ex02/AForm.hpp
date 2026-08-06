@@ -3,10 +3,11 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Bureaucrat;
 
-class AForm
+class AForm : ShrubberyCreationForm
 {
     private:
         const std::string   _name;
@@ -22,7 +23,7 @@ class AForm
         const int getGradeToSign();
         const int getGradeToExecute();
         void beSigned(Bureaucrat &be);
-
+        void execute(const Bureaucrat& executor);
         ~AForm();
         class GradeTooHighException : public std::exception
         {
