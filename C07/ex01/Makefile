@@ -1,16 +1,16 @@
-NAME = Bureaucrat
+NAME = iter
 CC = c++
-FLAG = -Wextra -Wall -Werror -std=c++98
-SRC = main.cpp Bureaucrat.cpp
+FLAG = -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp
 OBJ = $(SRC:%.cpp=%.o)
-HADER = Bureaucrat.hpp
+HADER = iter.hpp
 
-all:$(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
 
-%.o:%.cpp $(HADER)
+%.o:%.cpp $(NAME)
 	$(CC) $(FLAG) -c $< -o $@
 
 clean:

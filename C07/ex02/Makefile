@@ -1,16 +1,16 @@
-NAME = Serializer
+NAME = Array
 CC = c++
-FLAG = -Wextra -Wall -Werror -std=c++98
-SRC = Serializer.cpp
+FLAG = -Wall -Wextra -Werror -std=c++98
+SRC = main.cpp
 OBJ = $(SRC:%.cpp=%.o)
-HADER = Serializer.hpp
+HADER = Array.hpp
 
-all:$(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAG) $(OBJ) -o $(NAME)
 
-%.o:%.cpp $(HADER)
+%.o:%.cpp $(NAME)
 	$(CC) $(FLAG) -c $< -o $@
 
 clean:
